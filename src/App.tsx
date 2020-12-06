@@ -3,10 +3,12 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import Divider from '@material-ui/core/Divider';
 import Header from 'components/Header';
 import Title from 'components/Title';
 import CharactersSearch from 'components/CharactersSearch';
 import CharactersFilter from 'components/CharactersFilter';
+import CharactersList from 'components/CharactersList';
 import rootStore from 'stores/rootStore';
 import mainTheme from 'themes/mainTheme';
 
@@ -20,6 +22,8 @@ const App: React.FC = () => {
           <Title title="Breaking Bad Characters" />
           <CharactersSearch />
           <CharactersFilter />
+          <Divider />
+          <CharactersList />
         </Container>
       </ThemeProvider>
     </Provider>
