@@ -19,6 +19,7 @@ export const getCharacters = ({ limit, offset = defaultOffset }: IFetchCharacter
 
     if(!data.length) {
       dispatch(setHasNextPage(false));
+      dispatch(setCharacters.success([]));
       return;
     }
 

@@ -55,10 +55,10 @@ const CharactersList: React.FC = () => {
     }
   }, [dispatch, searchTerm]);
 
-  if (searchTerm && !list.length) {
+  if (!filteredList.length && !isRequesting) {
     return (
       <Typography component="p" variant="h4" className={classes.notFound}>
-        No characters found. Say my name correctly.
+        No characters found. {searchTerm && 'Say my name correctly.'}
       </Typography>
     );
   }
