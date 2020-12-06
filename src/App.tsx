@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Header from 'components/Header';
 import Title from 'components/Title';
 import CharactersSearch from 'components/CharactersSearch';
+import CharactersFilter from 'components/CharactersFilter';
 import rootStore from 'stores/rootStore';
 import mainTheme from 'themes/mainTheme';
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Container component="main">
           <Title title="Breaking Bad Characters" />
           <CharactersSearch />
+          <CharactersFilter />
         </Container>
       </ThemeProvider>
     </Provider>
