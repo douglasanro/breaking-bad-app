@@ -25,9 +25,8 @@ const CharactersSearch: React.FC = () => {
       label="Search character..."
       variant="outlined"
       onChange={debounce(searchCharacter, 500)}
-      data-testid="charactersSearch"
       inputProps={{
-        'data-testid': 'charactersSearchInput',
+        'data-testid': 'characters-search-input',
       }}
       InputProps={{
         endAdornment: (

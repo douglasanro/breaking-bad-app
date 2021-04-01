@@ -2,19 +2,31 @@ import { render, cleanup } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
+import { ThemeProvider } from '@material-ui/core/styles';
 import CharactersList from './CharactersList';
 import { charactersInitialState } from 'stores/characters/charactersReducers';
 import { requestingInitialState } from 'stores/requesting/requestingReducers';
+import { mockCharacters } from 'setupTests';
+import mainTheme from 'themes/mainTheme';
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
 let store: ReturnType<typeof mockStore>;
 
+const setupTest = () =>
+  render(<CharactersList />, {
+    wrapper: ({ children }) => (
+      <Provider store={store}>
+        <ThemeProvider theme={mainTheme}>{children}</ThemeProvider>
+      </Provider>
+    ),
+  });
+
 beforeEach(() => {
   store = mockStore({
     characters: {
       ...charactersInitialState,
-      list: (global as any).mockCharacters,
+      list: mockCharacters,
     },
     requesting: requestingInitialState,
   });
@@ -25,48 +37,39 @@ afterEach(() => {
 });
 
 test('Render CharactersList correctly', () => {
-  const charactersList = render(
-    <Provider store={store}>
-      <CharactersList />
-    </Provider>
-  );
-  expect(charactersList).toBeTruthy();
+  const { container } = setupTest();
+
+  expect(container).toMatchSnapshot();
 });
 
 test('Render filtered CharactersList correctly', () => {
   store = mockStore({
     characters: {
       ...charactersInitialState,
-      list: (global as any).mockCharacters,
+      list: mockCharacters,
       filter: {
         status: 'Alive',
       },
     },
     requesting: requestingInitialState,
   });
-  const charactersList = render(
-    <Provider store={store}>
-      <CharactersList />
-    </Provider>
-  );
-  expect(charactersList).toBeTruthy();
+  const { container } = setupTest();
+
+  expect(container).toMatchSnapshot();
 });
 
 test('Render searched CharactersList correctly', () => {
   store = mockStore({
     characters: {
       ...charactersInitialState,
-      list: (global as any).mockCharacters,
+      list: mockCharacters,
       searchTerm: 'Walter',
     },
     requesting: requestingInitialState,
   });
-  const charactersList = render(
-    <Provider store={store}>
-      <CharactersList />
-    </Provider>
-  );
-  expect(charactersList).toBeTruthy();
+  const { container } = setupTest();
+
+  expect(container).toMatchSnapshot();
 });
 
 test('Render not found search correctly', () => {
@@ -77,10 +80,7 @@ test('Render not found search correctly', () => {
     },
     requesting: requestingInitialState,
   });
-  const charactersList = render(
-    <Provider store={store}>
-      <CharactersList />
-    </Provider>
-  );
-  expect(charactersList).toBeTruthy();
+  const { container } = setupTest();
+
+  expect(container).toMatchSnapshot();
 });

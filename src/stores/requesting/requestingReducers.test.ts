@@ -12,7 +12,6 @@ test('should returns default state with invalid action type', () => {
 
 test('should add the request action type as a key on the state and assign the value as true', () => {
   const action: IAction<undefined> = { type: requestActionType };
-
   const actualResult: IRequestingState = requestingReducers(requestingInitialState, action);
   const expectedResult: IRequestingState = {
     [requestActionType]: true,

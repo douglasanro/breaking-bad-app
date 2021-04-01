@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render CharactersList correctly 1`] = `
+<div>
+  <div
+    class="MuiGrid-root makeStyles-container-1 MuiGrid-container MuiGrid-spacing-xs-4"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+    >
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-card-3 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <img
+          alt="Walter White"
+          class="MuiCardMedia-root makeStyles-media-4 MuiCardMedia-media MuiCardMedia-img"
+          src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+          title="Walter White"
+        />
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+          >
+            Walter White
+          </h2>
+          <p
+            class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            Age: 
+            63 years
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+    >
+      <span
+        style="font-size: 0px;"
+      />
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-card-3 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <img
+          alt="Jesse Pinkman"
+          class="MuiCardMedia-root makeStyles-media-4 MuiCardMedia-media MuiCardMedia-img"
+          src="https://vignette.wikia.nocookie.net/breakingbad/images/9/95/JesseS5.jpg/revision/latest?cb=20120620012441"
+          title="Jesse Pinkman"
+        />
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+          >
+            Jesse Pinkman
+          </h2>
+          <p
+            class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            Age: 
+            37 years
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render filtered CharactersList correctly 1`] = `
+<div>
+  <div
+    class="MuiGrid-root makeStyles-container-5 MuiGrid-container MuiGrid-spacing-xs-4"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+    >
+      <span
+        style="font-size: 0px;"
+      />
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-card-7 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <img
+          alt="Jesse Pinkman"
+          class="MuiCardMedia-root makeStyles-media-8 MuiCardMedia-media MuiCardMedia-img"
+          src="https://vignette.wikia.nocookie.net/breakingbad/images/9/95/JesseS5.jpg/revision/latest?cb=20120620012441"
+          title="Jesse Pinkman"
+        />
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+          >
+            Jesse Pinkman
+          </h2>
+          <p
+            class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            Age: 
+            37 years
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render not found search correctly 1`] = `
+<div>
+  <p
+    class="MuiTypography-root makeStyles-notFound-14 MuiTypography-h4"
+  >
+    No characters found. 
+    Say my name correctly.
+  </p>
+</div>
+`;
+
+exports[`Render searched CharactersList correctly 1`] = `
+<div>
+  <div
+    class="MuiGrid-root makeStyles-container-9 MuiGrid-container MuiGrid-spacing-xs-4"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+    >
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-card-11 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <img
+          alt="Walter White"
+          class="MuiCardMedia-root makeStyles-media-12 MuiCardMedia-media MuiCardMedia-img"
+          src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+          title="Walter White"
+        />
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+          >
+            Walter White
+          </h2>
+          <p
+            class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            Age: 
+            63 years
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+    >
+      <span
+        style="font-size: 0px;"
+      />
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-card-11 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <img
+          alt="Jesse Pinkman"
+          class="MuiCardMedia-root makeStyles-media-12 MuiCardMedia-media MuiCardMedia-img"
+          src="https://vignette.wikia.nocookie.net/breakingbad/images/9/95/JesseS5.jpg/revision/latest?cb=20120620012441"
+          title="Jesse Pinkman"
+        />
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+          >
+            Jesse Pinkman
+          </h2>
+          <p
+            class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            Age: 
+            37 years
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
