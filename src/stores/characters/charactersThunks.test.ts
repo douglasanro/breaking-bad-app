@@ -6,6 +6,7 @@ import { charactersInitialState } from './charactersReducers';
 import { getCharacters } from './charactersThunks';
 import { ICharacterState } from './charactersModels';
 import { rootState } from 'stores/rootStore';
+import { mockCharacters } from 'setupTests';
 
 type DispatchMock = ThunkDispatch<rootState, void, AnyAction>;
 
@@ -27,7 +28,7 @@ test('should get characters with success', () => {
     { type: "@characters/FETCH_CHARACTERS_REQUEST" },
   ];
   mockedAxios.get.mockReturnValue({
-    data: (global as any).mockCharacters,
+    data: mockCharacters,
     status: 200
   } as any);
   store.dispatch(getCharacters({ limit: 10 }));

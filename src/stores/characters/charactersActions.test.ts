@@ -1,12 +1,13 @@
 import charactersReducers, { charactersInitialState } from './charactersReducers';
 import { setCharacters, clearCharacters, setHasNextPage, setFilter, setSearchTerm } from './charactersActions';
+import { mockCharacters } from 'setupTests';
 
 test('should set characters correctly', () => {
   const before = charactersInitialState;
-  const action = setCharacters.success((global as any).mockCharacters);
+  const action = setCharacters.success(mockCharacters);
   const after = {
     ...charactersInitialState,
-    list: (global as any).mockCharacters
+    list: mockCharacters
   }
 
   expect(charactersReducers(before, action)).toEqual(after);

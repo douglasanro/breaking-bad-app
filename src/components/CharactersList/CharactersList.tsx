@@ -65,12 +65,12 @@ const CharactersList: React.FC = () => {
 
   return (
     <Grid container spacing={4} className={classes.container}>
-      {filteredList.map(({ char_id, name, birthday, img, status, ...otherProps }, index) => (
+      {filteredList.map(({ char_id, name, birthday, img }, index) => (
         <Grid key={char_id} item xs={12} sm={6} md={4}>
           {hasNextPage && !isRequesting && index === filteredList.length - 1 && (
             <Waypoint onEnter={getMoreCharacters} />
           )}
-          <CharacterCard char_id={char_id} name={name} birthday={birthday} img={img} status={status} {...otherProps} />
+          <CharacterCard name={name} birthday={birthday} img={img} />
         </Grid>
       ))}
     </Grid>

@@ -4,9 +4,8 @@ import { setCharacters, setHasNextPage } from './charactersActions';
 import { IFetchCharacters } from './charactersModels';
 import ICharacter from 'models/ICharacter';
 import { rootState } from 'stores/rootStore';
+import { BREAKING_BAD_API_URL ,SERVICE } from 'environments';
 
-const baseUrl = 'https://breakingbadapi.com/api';
-const endpoint = '/characters';
 const defaultOffset = 0;
 
 export const getCharacters = ({ limit, offset = defaultOffset }: IFetchCharacters) => async ( dispatch: Dispatch, getState: () => rootState) => {
@@ -15,7 +14,7 @@ export const getCharacters = ({ limit, offset = defaultOffset }: IFetchCharacter
   try {
     dispatch(setCharacters.request());
     const searchByName = searchTerm ? `&name=${searchTerm}` : '';
-    const { data } = await axios.get(`${baseUrl}${endpoint}?limit=${limit}&offset=${offset}${searchByName}`);
+    const { data } = await axios.get(`${BREAKING_BAD_API_URL}${SERVICE.CHARACTERS()}?limit=${limit}&offset=${offset}${searchByName}`);
 
     if(!data.length) {
       dispatch(setHasNextPage(false));

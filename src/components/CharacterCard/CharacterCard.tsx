@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,7 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import ICharacter from 'models/ICharacter';
 import getCurrentAgeByDate from 'utils/getCurrentAgeByDate';
 
-const useStyles = makeStyles((theme: Theme) =>
+type TCharacterCardProps = Pick<ICharacter, 'name' | 'birthday' | 'img'>;
+
+const useStyles = makeStyles(() =>
   createStyles({
     card: {
       maxWidth: 600,
@@ -19,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const CharacterCard: React.FC<ICharacter> = ({ name, birthday, img }) => {
+const CharacterCard: React.FC<TCharacterCardProps> = ({ name, birthday, img }) => {
   const classes = useStyles();
   const age = getCurrentAgeByDate(birthday);
 

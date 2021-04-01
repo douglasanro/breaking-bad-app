@@ -72,6 +72,7 @@ const CharactersFilter: React.FC = () => {
             value={filter[id as keyof ICharacterFilter]}
             label={label}
             onChange={handleChange}
+            inputProps={{ 'data-testid': `characters-filter-${id}` }}
           >
             {initWithEmptyOption && (
               <MenuItem value="">

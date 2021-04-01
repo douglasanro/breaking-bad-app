@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render CharactersFilter correctly 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-3 makeStyles-box-1"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body1"
+    >
+      Filters:
+    </p>
+    <div
+      class="MuiFormControl-root makeStyles-formControl-2"
+    >
+      <label
+        class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+        data-shrink="false"
+        id="characters-filter-status-label"
+      >
+        Status
+      </label>
+      <div
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+      >
+        <div
+          aria-haspopup="listbox"
+          aria-labelledby="characters-filter-status-label characters-filter-status"
+          class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input"
+          id="characters-filter-status"
+          role="button"
+          tabindex="0"
+        >
+          <span>
+            ​
+          </span>
+        </div>
+        <input
+          aria-hidden="true"
+          class="MuiSelect-nativeInput"
+          data-testid="characters-filter-status"
+          name="status"
+          tabindex="-1"
+          value=""
+        />
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSelect-icon MuiSelect-iconOutlined"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+        <fieldset
+          aria-hidden="true"
+          class="PrivateNotchedOutline-root-4 MuiOutlinedInput-notchedOutline"
+        >
+          <legend
+            class="PrivateNotchedOutline-legendLabelled-6"
+          >
+            <span>
+              Status
+            </span>
+          </legend>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+`;

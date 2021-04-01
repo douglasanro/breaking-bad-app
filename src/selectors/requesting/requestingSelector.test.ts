@@ -1,51 +1,27 @@
 import requestingSelector from './requestingSelector';
 import configureMockStore from 'redux-mock-store';
+import { charactersInitialState } from 'stores/characters/charactersReducers';
+import rootReducer from 'stores/rootReducer';
 
-const mockStore = configureMockStore();
-let store: any;
-
+const mockStore = configureMockStore<ReturnType<typeof rootReducer>>();
+let store: ReturnType<typeof mockStore>;
 beforeEach(() => {
-  store = {
+  store = mockStore({
+    characters: charactersInitialState,
     requesting: {
       'SomeAction.FETCH_SOMETHING_REQUEST': true,
     },
-  };
+  });
 });
 
-test('should return true', () => {
-  const actualResult: boolean = requestingSelector(store, ['SomeAction.FETCH_SOMETHING_REQUEST']);
+test('requestingSelector should return true', () => {
+  const actualResult: boolean = requestingSelector(store.getState(), ['SomeAction.FETCH_SOMETHING_REQUEST']);
 
   expect(actualResult).toBe(true);
 });
 
-it('should return false', () => {
-  const actualResult: boolean = requestingSelector(store, ['SomeAction.OTHER_REQUEST']);
+test('requestingSelector should return false', () => {
+  const actualResult: boolean = requestingSelector(store.getState(), ['SomeAction.OTHER_REQUEST']);
 
   expect(actualResult).toBe(false);
 });
-
-// describe('RequestingSelector', () => {
-//   let store: any;
-
-//   beforeEach(() => {
-//     store = {
-//       requesting: {
-//         ['SomeAction.FETCH_SOMETHING']: true,
-//       },
-//     };
-//   });
-
-//   describe('selectRequesting', () => {
-//     it('should return true', () => {
-//       const actualResult: boolean = selectRequesting(store, ['SomeAction.REQUEST_TEST']);
-
-//       expect(actualResult).toBe(true);
-//     });
-
-//     it('should return false', () => {
-//       const actualResult: boolean = selectRequesting(store, ['SomeAction.REQUEST_OTHER']);
-
-//       expect(actualResult).toBe(false);
-//     });
-//   });
-// });
